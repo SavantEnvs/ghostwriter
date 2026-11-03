@@ -1,0 +1,10 @@
+project: savantenvs/ghostwriter
+target: fuzz_cmark_gfm
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_cmark_gfm/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_cmark_gfm
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_cmark_gfm/fuzz_cmark_gfm.dict
+    timeout: 5
