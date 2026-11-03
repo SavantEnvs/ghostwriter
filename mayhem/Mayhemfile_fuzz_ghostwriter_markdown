@@ -1,0 +1,10 @@
+project: savantenvs/ghostwriter
+target: fuzz_ghostwriter_markdown
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ghostwriter_markdown/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ghostwriter_markdown
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_ghostwriter_markdown/fuzz_ghostwriter_markdown.dict
+    timeout: 5
